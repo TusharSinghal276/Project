@@ -1,18 +1,16 @@
-body{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-.container{
-    flex: 1;
-}
+/* body{
+    background-color: rgb(162, 185, 48);
+} */
+
+/* Navbar */
 .navbar{
     height:5rem;
     background-color: white;
+    flex-shrink: 0; /* prevents shrinking */
 }
-.fa-compass{
+.fa-house{
     color:#fe424d;
-    font-size:2rem;
+    font-size:1.5rem;
 }
 .nav-link{
     color:#222222 !important;
@@ -43,41 +41,141 @@ body{
     justify-content:center;
     align-items: space-evenly;
 }
-.card{
-    border:none !important;
-    margin-bottom:2rem;
+
+
+html, body {
+    height: 100%;
+    margin: 0;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+/* cards */
+
+.listing-card{
+    border: none !important;
+    margin-bottom: 2rem;
+}
+
 .card-img-top{
-    border-radius:1rem !important;
-    width:100% !important;
-    object-fit:cover !important;
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
 }
+
 .card-body{
-    padding:0 !important;
+    padding: 0 !important;
 }
-.card-text-p{
-    font-weight:400;
+
+.card-text{
+    font-weight: 400;
 }
+
 .listing-link{
     text-decoration: none;
 }
+
+/* card Effect */
+
 .card-img-overlay{
-    opacity:0;
+  opacity: 0;
 }
+
 .card-img-overlay:hover{
-    opacity:0.2;
-    background-color: white;
+  opacity: 0.2;
+  background-color: #ebebeb;
 }
-.add-btn,.edit-btn{
-    background-color:#fe424d !important;
-    border:none !important;
+
+/* Now page */
+
+.add-btn{
+    background-color: #fe424d !important;
+    border: none !important;
 }
+
+/* form lable */
+
+.form-label{
+    margin: 0 !important;
+}
+
+/* show page */
+
 .show-img{
-    height:30vh;
+    height: 30vh;
 }
+
 .btns{
     display: flex;
-}.show-card{
-    padding-left: 0;
-    padding-right: 0;
 }
+
+.edit-btn{
+   background-color: #fe424d !important;
+}
+
+/* home page */
+
+.hero {
+    background-image: url("https://images.unsplash.com/photo-1625505826533-5c80aca7d157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGdvYXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60");
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+    font-size: 4rem;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+/* Mobile navbar dropdown background */
+@media (max-width: 767px) {
+  .navbar-collapse {
+    background-color: white;  /* ya jo bhi color tu chahe */
+    padding: 10px;
+    border-radius: 0 0 10px 10px; /* thoda style ke liye */
+  }
+
+  .navbar-collapse .nav-link {
+    color: black !important;
+    padding: 8px 12px;
+  }
+
+  .navbar-collapse .nav-link:hover {
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+}
+
+.navbar form input {
+  border-radius: 20px;
+  padding-left: 15px;
+}
+
+.navbar form button {
+  border-radius: 20px;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+}
+
+.navbar form button:hover {
+  background: #fe424d; /* darker red on hover */
+  color: white;
+}
+

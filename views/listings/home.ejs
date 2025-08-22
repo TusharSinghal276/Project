@@ -1,0 +1,33 @@
+<% layout("layouts/boilerplate") %> 
+        <div class="hero text-center">
+            <div>
+                <h1>Explore the World</h1>
+                <p class="lead">Discover your next adventure with WanderLust</p>
+                <a href="/listings" class="btn btn-primary mt-3">View Listings</a>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h2 class="text-center mb-4">Popular Destinations</h2>
+            <div class="row g-4">
+                <% allListings.forEach(listing=> { %>
+                    <div class="col-md-4">
+                        <div class="card listing-card">
+                            <a href="/listings/<%= listing._id %>" class="listing-link">
+                                <img src="<%= listing.image.url || 'https://via.placeholder.com/400x200' %>"
+                                    class="card-img-top" alt="<%= listing.title %>">
+                                <div class="card-body" style="color: black;" >
+                                    <h5 class="card-title">
+                                       <b> <%= listing.title %> </b>
+                                    </h5>
+                                    <p class="card-text" style="color: black;">
+                                        <%= listing.location %>, <%= listing.country %>
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+

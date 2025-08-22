@@ -1,47 +1,47 @@
-<% layout("/layouts/boilerplate") %>
-<div class="row mt-3">
-    <div class="col-8 offset-2">
+<% layout("layouts/boilerplate") %> 
 
-    <h3>Edit your Listing</h3>
-    <form method = "POST" action ="/listings/<%= listing._id %>?_method=PUT" novalidate class="needs-validation">
+<div class="row">
+    <div class="col-8 offset-2">
+<br>
+    <h1>Edit listings</h1>
+    <br>
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="POST"  class="needs-validation" novalidate enctype="multipart/form-data"> <!-- novalidate is used to remove or disabled the default browser validation-->
+        
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input name="listing[title]"value="<%=listing.title%>"type="text"class="form-control" required>
-            <div class="valid-feedback">Title looks good!</div>
+            <input type="text" name="listing[title]"  value="<%= listing.title %>" class="form-control" required>
         </div>
-      
-      <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea name="listing[description]"class="form-control" required><%=listing.description%></textarea>
-        <div class="invalid-feedback">Please enter a short description</div>
-      </div>
-      
-      <div class="mb-3">
-        <label for="image" class="form-label">Image Link</label>
-        <input name="listing[image]"value="<%=listing.image%>"type="text"class="form-control" required>
-      </div>
-      
-      <div class="mb-3">
-        <label for="price" class="form-label">Price</label>
-        <input name="listing[price]"value="<%=listing.price%>"type="number"class="form-control"required>
-        <div class="invalid-feedback">Please enter the valid price!</div>
-      </div>
-      
-       <div clas="mb-3">
-        
-        <label for="location" class="form-label">Location</label>
-        <input name="listing[location]"value="<%=listing.location%>"type="text"class="form-control"required>
-        <div class="invalid-feedback">Please enter the location name</div>
-      </div>
-       
-       <div clas="mb-3">
-        <label for="country" class="form-label">Country</label>
-       <input name="listing[country]"value="<%=listing.country%>"type="text"class="form-control" required>
-       <div class="invalid-feedback">Please enter the country name</div>
-       </div>
-   <button class="btn btn-dark edit-btn mt-3">Edit</button>
-    </form>
 
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea type="text" name="listing[description]"  class="form-control" required><%= listing.description %></textarea>
+            </div>
+            <div class="mb-3">
+            <label class="form-label">Current Image:</label><br>
+            <img width="250" src="<%= currImg %>" >
+            </div>
+            <div class="mb-3">
+            <label for="image" class="form-label">Upload new Image</label>
+            <input type="file" name="listing[image]" class="form-control" >
+            </div>
+            <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" name="listing[price]"  value="<%= listing.price %>"  class="form-control" required>
+            </div>
+            <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" name="listing[location]"   value="<%= listing.location %>" class="form-control" required>
+            </div>
+            <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input type="text" name="listing[country]" class="form-control"value="<%= listing.country %>" required>
+            </div>
+        <br>
+        <button class="btn btn-dark edit-btn">Edit</button>
+        <br>
+    </form>
+            
 </div>
 </div>
-<script src="/js/script.js"></script>
+    <script src="/js/script.js"></script> 

@@ -1,0 +1,28 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container my-4">
+  <h3>Search Results for "<%= query %>"</h3>
+
+  <div class="row">
+    <% if(listings.length > 0) { %>
+      <% listings.forEach(listing => { %>
+        <div class="col-md-4 mb-4">
+          <a href="/listings/<%= listing._id %>" class="listing-link text-decoration-none text-dark">
+            <div class="card listing-card ">
+              <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem; object-fit: cover;">
+              <div class="card-img-overlay"></div>
+              <div class="card-body">
+                <p class="card-text">
+                  <b><%= listing.title %></b><br>
+                  &#8377;<%= listing.price ? listing.price.toLocaleString('en-IN') : 'N/A' %>/night
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p class="text-muted">No listings found for "<%= query %>".</p>
+    <% } %>
+  </div>
+</div>
